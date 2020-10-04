@@ -1,3 +1,24 @@
 body {
   font-family: $montserrat;
+  @include mp-0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+  @include mp-0;
+}
+
+ul {
+  list-style: none;
+  @include mp-0;
+}
+
+.btn {
+  @include btn(12px 29px);
 }

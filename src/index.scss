@@ -1,3 +1,104 @@
 @import "./scss/url";
 @import "./scss/variable";
+@import "./scss/mixing";
+@import "./scss/mediaQuery";
 @import "./scss/utiles";
+
+// Navbar
+header {
+  position: fixed;
+  width: 100%;
+  color: white;
+
+  nav {
+    @include flex(space-between);
+
+    .responsive {
+      display: none;
+    }
+    .responsive-desktop {
+      @include flex(space-between);
+      .menu {
+        @include flex(space-between);
+        text-transform: capitalize;
+        a {
+          font-weight: 500;
+          font-size: 16px;
+          font-family: $montserrat;
+        }
+      }
+
+      label {
+        position: relative;
+        input[type="text"] {
+          width: 370px;
+          height: 44px;
+          background: rgba(255, 255, 255, 0.2);
+          border: 1px solid #ffffff;
+          box-sizing: border-box;
+          border-radius: 5px;
+          font-size: 1rem;
+          color: white;
+          padding-left: 3rem;
+          font-weight: 500;
+          &::placeholder {
+            color: white;
+            font-family: $montserrat;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+        img {
+          position: absolute;
+          top: 0%;
+          left: 17px;
+        }
+      }
+    }
+
+    // media query
+    @include custom(1260px) {
+      .responsive {
+        display: block;
+        span {
+          transition: 0.5s all;
+          display: block;
+          width: 30px;
+          height: 3px;
+          background: $primary-bg-btn;
+          margin-top: 0.4rem;
+        }
+      }
+      .toggle {
+        span {
+          &:nth-child(1) {
+            transform: translateY(0px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+          }
+        }
+      }
+      .responsive-desktop {
+        display: none;
+      }
+      .responsive-toggle {
+        display: block;
+      }
+    }
+  }
+}
+
+// Home
+.home {
+  background-size: cover;
+  background-position: bottom;
+  .banner {
+    height: 100vh;
+    background: #000000a6;
+  }
+}
