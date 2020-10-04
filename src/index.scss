@@ -59,8 +59,10 @@ header {
 
     // media query
     @include custom(1260px) {
+      align-items: flex-start;
       .responsive {
         display: block;
+        float: right;
         span {
           transition: 0.5s all;
           display: block;
@@ -84,10 +86,31 @@ header {
         }
       }
       .responsive-desktop {
-        display: none;
-      }
-      .responsive-toggle {
         display: block;
+        height: 0px;
+        overflow: hidden;
+        margin-top: 3rem;
+        text-align: right;
+        label input[type="text"] {
+          width: 100%;
+        }
+      }
+
+      .menu-container {
+        .responsive-toggle {
+          height: 100%;
+          padding-bottom: 10rem;
+          .menu {
+            display: block;
+            .ml-3 {
+              margin: 0;
+              margin-top: 0.7rem;
+            }
+            li:last-child {
+              margin-top: 2rem;
+            }
+          }
+        }
       }
     }
   }
