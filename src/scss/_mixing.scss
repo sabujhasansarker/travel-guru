@@ -61,6 +61,8 @@
   border-radius: 5px;
   color: black;
   padding: $padding;
+  font-family: $montserrat;
+  cursor: pointer;
   &:hover {
     background: darken($primary-bg-btn, 10%);
   }

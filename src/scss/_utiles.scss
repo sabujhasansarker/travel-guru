@@ -42,3 +42,164 @@ p {
 .disable {
   cursor: not-allowed !important;
 }
+
+.banner {
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  &-left {
+    width: 33%;
+
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      line-height: 24px;
+      margin: 26px 0 3rem;
+    }
+    .btn {
+      @include flex(space-between);
+      width: 100px;
+    }
+    @include tab() {
+      width: 100%;
+    }
+  }
+  &-right {
+    min-height: 500px;
+    &-form {
+      background: white;
+      color: #818181;
+      padding: 25px;
+      border-radius: 5px;
+      .form-group {
+        margin-bottom: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .d-flex {
+        @include flex(space-between);
+        input[type="date" i] {
+          width: 200px;
+        }
+      }
+      label {
+        display: block;
+        text-transform: capitalize;
+        margin-bottom: 0.4rem;
+      }
+      input[type="date" i],
+      select {
+        font-weight: bold;
+        text-transform: capitalize;
+        width: 417px;
+        background: #f2f2f2;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        padding: 0 0.7rem;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-family: $montserrat;
+      }
+      .btn {
+        border: none;
+        width: 100%;
+        text-transform: capitalize;
+        padding: 0.8rem;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+    }
+    .slider {
+      @include flex(space-between);
+      position: absolute;
+      left: 0;
+      margin-left: 50%;
+      top: -2rem;
+      &-active {
+        border: 3px solid $primary-bg-btn;
+        opacity: 1 !important;
+      }
+      &-none {
+        display: none !important;
+      }
+      &-last {
+        display: block !important;
+      }
+      &-single {
+        height: 416px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 270px;
+        border-radius: 20px;
+        position: relative;
+        margin-right: 2rem;
+        h2 {
+          font-size: 30px;
+          position: absolute;
+          bottom: 2rem;
+          left: 1.5rem;
+        }
+        &:hover {
+          border: 3px solid $primary-bg-btn;
+        }
+      }
+      @include tab() {
+        margin-left: 0;
+        top: 20rem;
+      }
+      @include custom(320px) {
+        top: 22rem;
+      }
+    }
+    .trigger {
+      @include flex(start);
+      position: absolute;
+      left: 50%;
+      bottom: 3rem;
+      @include tab() {
+        left: 0;
+      }
+      div {
+        width: 47px;
+        height: 47px;
+        background: white;
+        border-radius: 50%;
+        @include flex(center);
+        cursor: pointer;
+        &:hover {
+          background: darken(white, 10%);
+        }
+      }
+      .trigger-right {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-overly {
+    height: 100vh;
+    background: #000000a6;
+    color: white;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .container {
+    @include flex(space-between);
+    align-items: flex-start;
+    position: relative;
+    margin-top: 15rem;
+    padding-bottom: 3rem;
+    @include tab() {
+      display: block;
+      margin-top: 10rem;
+      padding-bottom: 10rem;
+    }
+    @include phn() {
+      padding-bottom: 7rem;
+    }
+  }
+}
