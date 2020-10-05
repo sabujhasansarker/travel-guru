@@ -5,6 +5,7 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
 import Booking from "./components/pages/Booking";
 import Login from "./components/pages/Login";
+import Registration from "./components/pages/Registration";
 
 const App = () => {
   const { data, black } = useContext(TravelContext);
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/booking/:name" component={Booking} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/registration" component={Registration} />
       </Switch>
     </Router>
   );
