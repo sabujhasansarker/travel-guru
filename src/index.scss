@@ -152,6 +152,9 @@ header {
         &-none {
           display: none !important;
         }
+        &-last {
+          display: block !important;
+        }
         &-single {
           height: 416px;
           background-repeat: no-repeat;

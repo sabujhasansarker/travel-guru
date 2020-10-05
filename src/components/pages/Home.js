@@ -33,7 +33,9 @@ const Home = () => {
                     key={index}
                     className={`slider-single ${
                       trigger == index ? "slider-active" : ""
-                    } ${trigger > index ? "slider-none" : ""} ${trigger}`}
+                    } ${trigger > index ? "slider-none" : ""} ${
+                      index == triggerHeight - 1 && "slider-last"
+                    }`}
                     style={{ backgroundImage: `url(${data.img})` }}
                   >
                     <h2 className="heading"> {data && data.name}</h2>
