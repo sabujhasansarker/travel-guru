@@ -132,6 +132,7 @@
   "essentialData": {
     "logo": "../images/logo.png",
     "banner": "../images/banner.png",
-    "search": "../images/search.png"
+    "search": "../images/search.png",
+    "arrow": "../images/arrow.png"
   }
 }

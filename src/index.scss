@@ -9,7 +9,7 @@ header {
   position: fixed;
   width: 100%;
   color: white;
-
+  z-index: 9999999999;
   nav {
     @include flex(space-between);
 
@@ -126,8 +126,76 @@ header {
 .home {
   background-size: cover;
   background-position: bottom;
+  background-repeat: no-repeat;
   .banner {
     height: 100vh;
     background: #000000a6;
+    color: white;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    // padding: 6rem 0;
+    &-right {
+      min-height: 500px;
+
+      .slider {
+        @include flex(space-between);
+        position: absolute;
+        left: 0;
+        margin-left: 50%;
+
+        &-active {
+          border: 3px solid $primary-bg-btn;
+          opacity: 1 !important;
+        }
+        &-none {
+          display: none !important;
+        }
+        &-single {
+          height: 416px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 270px;
+          border-radius: 20px;
+          position: relative;
+          margin-right: 2rem;
+          opacity: 0.8;
+          h2 {
+            font-size: 30px;
+            position: absolute;
+            bottom: 2rem;
+            left: 1.5rem;
+          }
+        }
+      }
+      .trigger {
+        @include flex(start);
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        div {
+          width: 47px;
+          height: 47px;
+          background: white;
+          border-radius: 50%;
+          @include flex(center);
+          cursor: pointer;
+          &:hover {
+            background: darken(white, 10%);
+          }
+        }
+        .trigger-right {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .container {
+      @include flex(space-between);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }

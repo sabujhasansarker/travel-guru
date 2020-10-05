@@ -18,7 +18,26 @@ ul {
   list-style: none;
   @include mp-0;
 }
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  @include mp-0;
+}
 
 .btn {
   @include btn(12px 29px);
+}
+
+.heading {
+  font-family: bebas;
+}
+
+.disable {
+  cursor: not-allowed !important;
 }
