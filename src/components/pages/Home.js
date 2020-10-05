@@ -34,7 +34,9 @@ const Home = () => {
                     className={`slider-single ${
                       trigger == index ? "slider-active" : ""
                     } ${trigger > index ? "slider-none" : ""} ${
-                      index == triggerHeight - 1 && "slider-last"
+                      window.innerWidth > 646 &&
+                      index == triggerHeight - 1 &&
+                      "slider-last"
                     }`}
                     style={{ backgroundImage: `url(${data.img})` }}
                   >

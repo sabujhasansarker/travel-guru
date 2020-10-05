@@ -137,6 +137,7 @@ header {
     position: relative;
     &-left {
       width: 33%;
+
       h1 {
         font-size: 4rem;
       }
@@ -144,17 +145,19 @@ header {
         line-height: 24px;
         margin: 26px 0 3rem;
       }
+      @include tab() {
+        width: 100%;
+      }
     }
     // padding: 6rem 0;
     &-right {
       min-height: 500px;
-
       .slider {
         @include flex(space-between);
         position: absolute;
         left: 0;
         margin-left: 50%;
-
+        top: -2rem;
         &-active {
           border: 3px solid $primary-bg-btn;
           opacity: 1 !important;
@@ -180,12 +183,22 @@ header {
             left: 1.5rem;
           }
         }
+        @include tab() {
+          margin-left: 0;
+          top: 20rem;
+        }
+        @include custom(320px) {
+          top: 22rem;
+        }
       }
       .trigger {
         @include flex(start);
         position: absolute;
         left: 50%;
         bottom: 3rem;
+        @include tab() {
+          left: 0;
+        }
         div {
           width: 47px;
           height: 47px;
@@ -204,9 +217,18 @@ header {
     }
     .container {
       @include flex(space-between);
+      align-items: flex-start;
       position: relative;
-      margin-top: 10rem;
+      margin-top: 15rem;
       padding-bottom: 3rem;
+      @include tab() {
+        display: block;
+        margin-top: 10rem;
+        padding-bottom: 10rem;
+      }
+      @include phn() {
+        padding-bottom: 7rem;
+      }
     }
   }
 }
