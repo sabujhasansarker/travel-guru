@@ -210,12 +210,48 @@ header {
 
 // search
 .search {
-  padding-top: 6.5rem;
+  padding: 6.5rem 0;
+
   &-right {
     iframe {
       height: 702px;
       width: 500px;
       border-radius: 13px;
+    }
+  }
+  &-left {
+    width: 50%;
+    .single-hotel {
+      @include flex(unset);
+      align-items: flex-start;
+      .flex {
+        @include flex(unset);
+        img {
+          height: 15px;
+          width: 15px;
+        }
+      }
+      &-left {
+        img {
+          width: 270px;
+          height: 188px;
+          border-radius: 5px;
+        }
+        margin-right: 2rem;
+      }
+      &-right {
+        h2 {
+          font-weight: 500;
+          font-size: 18px;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: 100;
+        }
+        b {
+          font-weight: 500;
+        }
+      }
     }
   }
   .container {

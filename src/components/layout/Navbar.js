@@ -55,7 +55,7 @@ const Navbar = ({ logo, search, black }) => {
                   <Link to="/contact">contact</Link>
                 </li>
                 <li className="ml-3">
-                  <Link className="btn" to="/contact">
+                  <Link className="btn" to="/login">
                     login
                   </Link>
                 </li>

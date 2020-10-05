@@ -14,21 +14,27 @@
           "hotelName": "Light bright airy stylish apt & safe peaceful stay",
           "guest": 4,
           "bed": 3,
-          "bath": 2
+          "bath": 2,
+          "review": "4.9 (20)",
+          "price": 34
         },
         {
           "hotelImg": "https://i.ibb.co/KLHTH1w/Rectangle-27.png",
           "hotelName": "Apartment in Lost Panorama",
           "guest": 3,
           "bed": 2,
-          "bath": 1
+          "bath": 1,
+          "review": "4.8 (10)",
+          "price": 52
         },
         {
           "hotelImg": "https://i.ibb.co/Hz1RpXL/Rectangle-28.png",
           "hotelName": "AR Lounge & Pool (r&r + b&b)",
           "guest": 2,
           "bed": 1,
-          "bath": 1
+          "bath": 1,
+          "review": "4.9 (25)",
+          "price": 44
         }
       ]
     },
@@ -46,21 +52,27 @@
           "hotelName": "Hollywood Twin Room",
           "guest": 2,
           "bed": 2,
-          "bath": 2
+          "bath": 2,
+          "review": "4.9 (20)",
+          "price": 34
         },
         {
           "hotelImg": "https://i.ibb.co/Bc0b2p4/241458675.jpg",
           "hotelName": "Executive Suite",
           "guest": 4,
           "bed": 3,
-          "bath": 2
+          "bath": 2,
+          "review": "4.8 (25)",
+          "price": 40
         },
         {
           "hotelImg": "https://i.ibb.co/Fs103gG/244928554.jpg",
           "hotelName": "Mini Suite or Junior Suite",
           "guest": 3,
           "bed": 3,
-          "bath": 1
+          "bath": 1,
+          "review": "5.0 (40)",
+          "price": 50
         }
       ]
     },
@@ -78,21 +90,27 @@
           "hotelName": "President Suite",
           "guest": 2,
           "bed": 1,
-          "bath": 1
+          "bath": 1,
+          "review": "4.9 (20)",
+          "price": 34
         },
         {
           "hotelImg": "https://i.ibb.co/tCkL6mY/230450490.jpg",
           "hotelName": "Room for Extended Stay",
           "guest": 5,
           "bed": 4,
-          "bath": 3
+          "bath": 3,
+          "review": "4.9 (20)",
+          "price": 34
         },
         {
           "hotelImg": "https://i.ibb.co/jffG7YB/df256d52.jpg",
           "hotelName": "Connecting rooms",
           "guest": 1,
           "bed": 1,
-          "bath": 1
+          "bath": 1,
+          "review": "4.9 (20)",
+          "price": 34
         }
       ]
     },
@@ -110,21 +128,27 @@
           "hotelName": "Murphy Room",
           "guest": 4,
           "bed": 3,
-          "bath": 2
+          "bath": 2,
+          "review": "4.9 (20)",
+          "price": 34
         },
         {
           "hotelImg": "https://i.ibb.co/7tYZwkH/luxury-grey-bedroom.jpg",
           "hotelName": "Accessible Room",
           "guest": 2,
           "bed": 1,
-          "bath": 2
+          "bath": 2,
+          "review": "4.9 (20)",
+          "price": 34
         },
         {
           "hotelImg": "https://i.ibb.co/HYBsSYJ/photo-1582719478250c89cae4dc85b.jpg",
           "hotelName": "Adjoining rooms",
           "guest": 6,
           "bed": 3,
-          "bath": 3
+          "bath": 3,
+          "review": "4.9 (20)",
+          "price": 34
         }
       ]
     }
@@ -135,6 +159,7 @@
     "banner": "../images/banner.png",
     "search": "../images/search.png",
     "arrow": "../images/arrow.png",
-    "longArrow": "../images/longArrow.png"
+    "longArrow": "../images/longArrow.png",
+    "star": "../images/star.png"
   }
 }
