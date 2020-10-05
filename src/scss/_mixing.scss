@@ -67,3 +67,9 @@
     background: darken($primary-bg-btn, 10%);
   }
 }
+
+@each $aliment in (center, left, right) {
+  .text-#{$aliment} {
+    text-align: #{$aliment};
+  }
+}

@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <section className="login">
       <form>
-        <h1 className="heading">Login</h1>
+        <h1>Login</h1>
         <div className="form-group">
           <input type="text" placeholder="Username or Email" />
         </div>
@@ -29,7 +29,12 @@ const Login = () => {
         <Link className="btn" to="/">
           Login
         </Link>
+        <p className="text-center mt-1">
+          Don’t have an account?{" "}
+          <Link to="/registration">Create an account</Link>
+        </p>
       </form>
+      <div className="or text-center my-2">Or</div>
     </section>
   );
 };
