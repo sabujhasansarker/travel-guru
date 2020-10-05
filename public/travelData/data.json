@@ -131,6 +131,7 @@
   ],
   "essentialData": {
     "logo": "../images/logo.png",
+    "blackLogo": "../images/blackLogo.png",
     "banner": "../images/banner.png",
     "search": "../images/search.png",
     "arrow": "../images/arrow.png",

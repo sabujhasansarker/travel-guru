@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -42,16 +42,18 @@ p {
 .disable {
   cursor: not-allowed !important;
 }
-
+a.logo img {
+  width: 100px;
+}
 .banner {
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   &-left {
-    width: 33%;
+    width: 40%;
 
     h1 {
-      font-size: 4rem;
+      font-size: 6.0625rem;
     }
     p {
       line-height: 24px;
@@ -104,12 +106,12 @@ p {
         font-family: $montserrat;
       }
       .btn {
-        border: none;
-        width: 100%;
         text-transform: capitalize;
         padding: 0.8rem;
         font-weight: 500;
         font-size: 1rem;
+        display: block;
+        text-align: center;
       }
     }
     .slider {

@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 
-import { GETDATA } from "../type";
+import { GETDATA, BLACK } from "../type";
 import TravelContext from "./TravelContext";
 import TravelReducer from "./TravelReducer";
 
@@ -8,6 +8,7 @@ const TravelState = ({ children }) => {
   const initialState = {
     data: [],
     loading: true,
+    black: false,
   };
 
   const [state, dispatch] = useReducer(TravelReducer, initialState);
@@ -30,9 +31,26 @@ const TravelState = ({ children }) => {
       });
   }, []);
 
-  const { data, loading } = state;
+  // set black logo
+  const blackLogo = () => {
+    dispatch({
+      type: BLACK,
+      payload: true,
+    });
+  };
+  // white
+  const whiteLogo = () => {
+    dispatch({
+      type: BLACK,
+      payload: false,
+    });
+  };
+
+  const { data, loading, black } = state;
   return (
-    <TravelContext.Provider value={{ data, loading }}>
+    <TravelContext.Provider
+      value={{ data, loading, black, blackLogo, whiteLogo }}
+    >
       {children}
     </TravelContext.Provider>
   );

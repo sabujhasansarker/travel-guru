@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ logo, search }) => {
+const Navbar = ({ logo, search, black }) => {
   const [toggle, setToggle] = useState(false);
   return (
     <header
       className={`pt-2 ${
         document.documentElement.scrollTop > 100 ? "stick-nav" : ""
       }`}
+      style={{ color: black ? "black" : "white" }}
     >
       <div className="container">
         <nav>
@@ -33,6 +34,7 @@ const Navbar = ({ logo, search }) => {
                     <input
                       type="text"
                       placeholder="Search your Destination..."
+                      style={{ display: black ? "none" : "block" }}
                     />
                   </label>
                 </div>

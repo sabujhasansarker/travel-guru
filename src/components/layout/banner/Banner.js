@@ -6,7 +6,7 @@ import TravelContext from "../../../context/travel/TravelContext";
 const Banner = ({ currentData }) => {
   const { data } = useContext(TravelContext);
   return (
-    <section
+    <div
       className="banner"
       style={{
         backgroundImage: `url(${
@@ -31,7 +31,7 @@ const Banner = ({ currentData }) => {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

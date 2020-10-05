@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BookingForm = ({ data }) => {
   const origin = ["dhaka", "rangpur", "cummila"];
@@ -40,7 +41,9 @@ const BookingForm = ({ data }) => {
           </div>
         </div>
         <div className="form-group">
-          <input type="submit" value="start booking" className="btn" />
+          <Link to="/login" className="btn">
+            Start booking
+          </Link>
         </div>
       </form>
     </div>

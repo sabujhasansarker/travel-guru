@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import Banner from "../layout/banner/Banner";
+import TravelContext from "../../context/travel/TravelContext";
 
 const Home = () => {
+  const { whiteLogo } = useContext(TravelContext);
+  useEffect(() => {
+    whiteLogo();
+  }, []);
   return (
-    <div className="home">
+    <section className="home">
       <Banner />
-    </div>
+    </section>
   );
 };
 
