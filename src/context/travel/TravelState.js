@@ -15,10 +15,13 @@ const TravelState = ({ children }) => {
   // get data
 
   useEffect(() => {
-    fetch("./travelData/data.json")
-      .then((res) => {
-        return res.json();
-      })
+    fetch("/travelData/data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
       .then((res) => {
         dispatch({
           type: GETDATA,

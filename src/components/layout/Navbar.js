@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 const Navbar = ({ logo, search }) => {
   const [toggle, setToggle] = useState(false);
   return (
-    <header className="pt-2">
+    <header
+      className={`pt-2 ${
+        document.documentElement.scrollTop > 100 ? "stick-nav" : ""
+      }`}
+    >
       <div className="container">
         <nav>
           <Link to="/" className="logo">

@@ -145,6 +145,10 @@ header {
         line-height: 24px;
         margin: 26px 0 3rem;
       }
+      .btn {
+        @include flex(space-between);
+        width: 100px;
+      }
       @include tab() {
         width: 100%;
       }
@@ -181,6 +185,9 @@ header {
             position: absolute;
             bottom: 2rem;
             left: 1.5rem;
+          }
+          &:hover {
+            border: 3px solid $primary-bg-btn;
           }
         }
         @include tab() {

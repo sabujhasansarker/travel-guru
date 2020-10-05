@@ -22,14 +22,22 @@ const Home = () => {
             <h1 className="heading">{mainData && mainData.name}</h1>
             <p className="text">{mainData && mainData.descriptionHome}</p>
             <Link to="/booking" className="btn">
-              Booking
+              Booking{" "}
+              <img
+                src={data.essentialData && data.essentialData.longArrow}
+                alt=""
+              />
             </Link>
           </div>
           <div className="banner-right">
             <div className="slider">
               {data.mainData &&
                 data.mainData.map((data, index) => (
-                  <div
+                  <Link
+                    to={`/booking/${data.name
+                      .split(" ")
+                      .join("-")
+                      .toLowerCase()}`}
                     key={index}
                     className={`slider-single ${
                       trigger == index ? "slider-active" : ""
@@ -41,7 +49,7 @@ const Home = () => {
                     style={{ backgroundImage: `url(${data.img})` }}
                   >
                     <h2 className="heading"> {data && data.name}</h2>
-                  </div>
+                  </Link>
                 ))}
             </div>
             <div className="trigger mt-2">

@@ -133,6 +133,7 @@
     "logo": "../images/logo.png",
     "banner": "../images/banner.png",
     "search": "../images/search.png",
-    "arrow": "../images/arrow.png"
+    "arrow": "../images/arrow.png",
+    "longArrow": "../images/longArrow.png"
   }
 }
