@@ -35,7 +35,8 @@ p {
 }
 
 .heading {
-  font-family: bebas;
+  font-family: $bebas;
+  text-transform: uppercase;
 }
 
 .disable {

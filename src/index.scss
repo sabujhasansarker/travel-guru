@@ -135,6 +135,16 @@ header {
     width: 100%;
     margin: 0 auto;
     position: relative;
+    &-left {
+      width: 33%;
+      h1 {
+        font-size: 4rem;
+      }
+      p {
+        line-height: 24px;
+        margin: 26px 0 3rem;
+      }
+    }
     // padding: 6rem 0;
     &-right {
       min-height: 500px;
@@ -163,7 +173,6 @@ header {
           border-radius: 20px;
           position: relative;
           margin-right: 2rem;
-          opacity: 0.8;
           h2 {
             font-size: 30px;
             position: absolute;
@@ -176,7 +185,7 @@ header {
         @include flex(start);
         position: absolute;
         left: 50%;
-        bottom: 0;
+        bottom: 3rem;
         div {
           width: 47px;
           height: 47px;
@@ -195,10 +204,9 @@ header {
     }
     .container {
       @include flex(space-between);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      margin-top: 10rem;
+      padding-bottom: 3rem;
     }
   }
 }
