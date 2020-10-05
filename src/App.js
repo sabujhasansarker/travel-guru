@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import Booking from "./components/pages/Booking";
 import Login from "./components/pages/Login";
 import Registration from "./components/pages/Registration";
+import Search from "./components/pages/Search";
 
 const App = () => {
   const { data, black } = useContext(TravelContext);
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path="/booking/:name" component={Booking} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/registration" component={Registration} />
+        <Route exact path="/search/:name" component={Search} />
       </Switch>
     </Router>
   );

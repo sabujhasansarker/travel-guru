@@ -29,12 +29,14 @@ const Navbar = ({ logo, search, black }) => {
             >
               <form className="form">
                 <div className="form-group">
-                  <label htmlFor="search">
+                  <label
+                    htmlFor="search"
+                    style={{ display: black ? "none" : "block" }}
+                  >
                     <img src={search} alt="" />
                     <input
                       type="text"
                       placeholder="Search your Destination..."
-                      style={{ display: black ? "none" : "block" }}
                     />
                   </label>
                 </div>

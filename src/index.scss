@@ -207,3 +207,21 @@ header {
     }
   }
 }
+
+// search
+.search {
+  padding-top: 6.5rem;
+  &-right {
+    iframe {
+      height: 702px;
+      width: 500px;
+      border-radius: 13px;
+    }
+  }
+  .container {
+    border-top: 1px solid #d1d1d1;
+    @include flex(space-between);
+    align-items: flex-start;
+    padding-top: 3rem;
+  }
+}

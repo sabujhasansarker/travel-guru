@@ -41,7 +41,7 @@ const BookingForm = ({ data }) => {
           </div>
         </div>
         <div className="form-group">
-          <Link to="/login" className="btn">
+          <Link to={`/search/${data && data.name.split(" ").join("-").toLowerCase()}`} className="btn">
             Start booking
           </Link>
         </div>
