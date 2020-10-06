@@ -7,9 +7,13 @@ import Booking from "./components/pages/Booking";
 import Login from "./components/pages/Login";
 import Registration from "./components/pages/Registration";
 import Search from "./components/pages/Search";
+import Loading from "./components/layout/Loading";
 
 const App = () => {
-  const { data, black, user, logout } = useContext(TravelContext);
+  const { data, black, user, logout, loading } = useContext(TravelContext);
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <Router>
       <Navbar

@@ -387,3 +387,43 @@ header {
     }
   }
 }
+
+// loading
+.loading {
+  height: 100vh;
+  background: $primary-bg-btn;
+  h1 {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    @mixin animation($time, $delay) {
+      margin: 1rem;
+      animation: slide-top #{$time}s ease-in-out #{$delay}s infinite
+        alternate-reverse both;
+    }
+    .one {
+      @include animation(0.5, 0.5);
+    }
+    .two {
+      @include animation(0.5, 0.75);
+    }
+    .three {
+      @include animation(0.5, 1);
+    }
+    @keyframes slide-top {
+      0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      100% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+      }
+    }
+  }
+}
