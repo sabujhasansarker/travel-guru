@@ -5,7 +5,7 @@ import { auth } from "../../config/fire";
 import TravelContext from "../../context/travel/TravelContext";
 
 const Login = () => {
-  const { blackLogo, user, getUser, data, googleReg } = useContext(
+  const { blackLogo, user, getUser, data, googleReg, facebookReg } = useContext(
     TravelContext
   );
 
@@ -85,7 +85,7 @@ const Login = () => {
         </p>
       </form>
       <div className="or text-center my-2">Or</div>
-      <div className="fb">
+      <div className="fb" onClick={() => facebookReg()}>
         <img src={data.essentialData && data.essentialData.fb} alt="" />
       </div>
       <div className="google" onClick={() => googleReg()}>
