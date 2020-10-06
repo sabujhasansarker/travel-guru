@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { auth } from "../../config/fire";
 import TravelContext from "../../context/travel/TravelContext";
 
 const Login = () => {
-  const { blackLogo } = useContext(TravelContext);
+  const { blackLogo, user, getUser } = useContext(TravelContext);
+
   useEffect(() => {
     blackLogo();
   }, []);
@@ -18,6 +19,10 @@ const Login = () => {
   const [alert, setAlert] = useState("");
   const { email, password } = data;
 
+  if (user) {
+    return <Redirect to="/" />;
+  }
+
   const onChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -25,8 +30,8 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await auth.signInWithEmailAndPassword(email, password);
-      console.log(user);
+      await auth.signInWithEmailAndPassword(email, password);
+      getUser();
     } catch (err) {
       setAlert(err.message);
       clearAlert();

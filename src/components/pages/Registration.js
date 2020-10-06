@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { auth } from "../../config/fire";
 import TravelContext from "../../context/travel/TravelContext";
 
 const Registration = () => {
-  const { blackLogo } = useContext(TravelContext);
+  const { blackLogo, user, getUser } = useContext(TravelContext);
   useEffect(() => {
     blackLogo();
   }, []);
@@ -20,6 +20,10 @@ const Registration = () => {
   });
   const [alert, setAlert] = useState("");
   const { firstName, lastName, email, password1, password2 } = data;
+
+  if (user) {
+    return <Redirect to="/" />;
+  }
 
   const onChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -40,6 +44,8 @@ const Registration = () => {
           auth.currentUser.updateProfile({
             displayName: firstName + " " + lastName,
           });
+          // console.log(user.user.providerData[0]);
+          getUser({ displayName: firstName + " " + lastName, email });
         } catch (err) {
           setAlert(err.message);
           clearAlert();

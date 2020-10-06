@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ logo, search, black, user, logout }) => {
   const [toggle, setToggle] = useState(false);
-  console.log(user);
   return (
     <header
       className={`pt-2 ${

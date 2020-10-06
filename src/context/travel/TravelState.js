@@ -50,12 +50,12 @@ const TravelState = ({ children }) => {
     });
   };
 
-  const getUser = () => {
+  const getUser = (reg) => {
     auth.onAuthStateChanged(function (user) {
       if (user) {
         dispatch({
           type: GETUSER,
-          payload: user.providerData[0],
+          payload: reg ? reg : user.providerData[0],
         });
       }
     });
