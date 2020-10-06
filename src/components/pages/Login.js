@@ -17,12 +17,10 @@ const Login = () => {
     email: "",
     password: "",
   });
-
   const [alert, setAlert] = useState("");
   const { email, password } = inputData;
-
   if (user) {
-    return <Redirect to="/" />;
+    return <Redirect to={window.history.back()} />;
   }
 
   const onChange = (e) => {
@@ -47,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <section className="login">
+    <section className="login pb-5">
       {alert && <div className="alert text-center p-1 my-2">{alert}</div>}
       <form onSubmit={(e) => onSubmit(e)}>
         <h1>Login</h1>
@@ -87,9 +85,11 @@ const Login = () => {
       <div className="or text-center my-2">Or</div>
       <div className="fb" onClick={() => facebookReg()}>
         <img src={data.essentialData && data.essentialData.fb} alt="" />
+        <p className="text-center">Continue with Facebook</p>
       </div>
       <div className="google mt-1" onClick={() => googleReg()}>
         <img src={data.essentialData && data.essentialData.google} alt="" />
+        <p className="text-center">Continue with Google</p>
       </div>
     </section>
   );
