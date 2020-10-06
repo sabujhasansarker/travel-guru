@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import TravelContext from "../../context/travel/TravelContext";
 import { Link } from "react-router-dom";
+
 import { auth } from "../../config/fire";
+import TravelContext from "../../context/travel/TravelContext";
 
 const Registration = () => {
   const { blackLogo } = useContext(TravelContext);
@@ -35,14 +36,10 @@ const Registration = () => {
         clearAlert();
       } else {
         try {
-          const user = await auth.createUserWithEmailAndPassword(
-            email,
-            password1
-          );
+          await auth.createUserWithEmailAndPassword(email, password1);
           auth.currentUser.updateProfile({
             displayName: firstName + " " + lastName,
           });
-          console.log(user);
         } catch (err) {
           setAlert(err.message);
           clearAlert();
@@ -53,7 +50,7 @@ const Registration = () => {
   const clearAlert = () => {
     setTimeout(() => {
       setAlert("");
-    }, 100000);
+    }, 2000);
   };
   return (
     <section className="login">
