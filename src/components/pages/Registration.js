@@ -5,13 +5,15 @@ import { auth } from "../../config/fire";
 import TravelContext from "../../context/travel/TravelContext";
 
 const Registration = () => {
-  const { blackLogo, user, getUser } = useContext(TravelContext);
+  const { blackLogo, user, getUser, facebookReg, googleReg, data } = useContext(
+    TravelContext
+  );
   useEffect(() => {
     blackLogo();
   }, []);
 
   // registration
-  const [data, setData] = useState({
+  const [inputData, setInputData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -19,14 +21,14 @@ const Registration = () => {
     password2: "",
   });
   const [alert, setAlert] = useState("");
-  const { firstName, lastName, email, password1, password2 } = data;
+  const { firstName, lastName, email, password1, password2 } = inputData;
 
   if (user) {
     return <Redirect to="/" />;
   }
 
   const onChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
@@ -44,7 +46,7 @@ const Registration = () => {
           auth.currentUser.updateProfile({
             displayName: firstName + " " + lastName,
           });
-          // console.log(user.user.providerData[0]);
+          // console.log(user.user.providerinputData[0]);
           getUser({ displayName: firstName + " " + lastName, email });
         } catch (err) {
           setAlert(err.message);
@@ -114,6 +116,12 @@ const Registration = () => {
         </p>
       </form>
       <div className="or text-center my-2">Or</div>
+      <div className="fb" onClick={() => facebookReg()}>
+        <img src={data.essentialData && data.essentialData.fb} alt="" />
+      </div>
+      <div className="google mt-1" onClick={() => googleReg()}>
+        <img src={data.essentialData && data.essentialData.google} alt="" />
+      </div>
     </section>
   );
 };

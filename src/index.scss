@@ -160,7 +160,7 @@ header {
 
 // login
 .login {
-  padding-top: 10rem;
+  padding: 10rem 0;
   width: 40%;
   margin: 0 auto;
   a {
@@ -169,6 +169,16 @@ header {
     &:hover {
       text-decoration: none;
     }
+  }
+  .fb,
+  .google {
+    border: 1px solid #c7c7c7;
+    box-sizing: border-box;
+    border-radius: 57px;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    cursor: pointer;
   }
   .alert.text-center.p-1 {
     background: #e60303;

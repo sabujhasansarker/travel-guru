@@ -88,7 +88,7 @@ const Login = () => {
       <div className="fb" onClick={() => facebookReg()}>
         <img src={data.essentialData && data.essentialData.fb} alt="" />
       </div>
-      <div className="google" onClick={() => googleReg()}>
+      <div className="google mt-1" onClick={() => googleReg()}>
         <img src={data.essentialData && data.essentialData.google} alt="" />
       </div>
     </section>
