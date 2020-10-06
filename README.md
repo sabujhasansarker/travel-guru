@@ -2,8 +2,6 @@
 
 
 # Travel Guru [<img  src="https://img.shields.io/badge/%20Travel%20Guru -Live%20here-brightgreen"/>](https://travel-guru-c87a1.web.app/)
-
-> This is for a practice project I am following ThemeForest agency theme
 ---
 # Quick Start ![rocket](https://github.githubassets.com/images/icons/emoji/unicode/1f680.png)
 
