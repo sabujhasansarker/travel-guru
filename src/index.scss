@@ -20,7 +20,6 @@ header {
       @include flex(space-between);
       .menu {
         @include flex(space-between);
-        align-items: flex-start;
         text-transform: capitalize;
         a {
           font-weight: 500;
@@ -29,11 +28,17 @@ header {
         }
         .name {
           position: relative;
-          height: 3rem;
           b {
             font-weight: 500;
             float: right;
             cursor: pointer;
+            position: relative;
+            z-index: 9;
+          }
+          .ul-container {
+            position: absolute;
+            right: 0;
+            top: -1rem;
           }
           ul {
             display: none;
@@ -41,8 +46,7 @@ header {
             padding: 1rem;
             border-radius: 5px;
             line-height: 2;
-            position: absolute;
-            right: 0;
+            margin-top: 3rem;
             li {
               cursor: pointer;
               color: #000000;
@@ -139,6 +143,7 @@ header {
         right: 5%;
         .menu {
           display: block;
+          overflow: scroll;
         }
         .responsive-toggle {
           height: 100%;

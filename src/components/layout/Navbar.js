@@ -48,30 +48,30 @@ const Navbar = ({ logo, search, black, user, logout }) => {
               </form>
               <ul className="menu">
                 <li className="ml-3">
-                  <Link to="/news">News</Link>
+                  <Link to="#">News</Link>
                 </li>
                 <li className="ml-3">
-                  <Link to="/destination">destination</Link>
+                  <Link to="#">destination</Link>
                 </li>
                 <li className="ml-3">
-                  <Link to="/blog">blog</Link>
+                  <Link to="#">blog</Link>
                 </li>
                 <li className="ml-3">
-                  <Link to="/contact">contact</Link>
+                  <Link to="#">contact</Link>
                 </li>
                 {user ? (
                   <li className="ml-3 name">
-                    <p>
-                      <b>{user && user.displayName}</b>
-                    </p>
-                    <ul className="mt-2">
-                      <li>Account</li>
-                      <li>Profile</li>
-                      <li>Setting</li>
-                      <li className="btn" onClick={() => logout()}>
-                        logOut
-                      </li>
-                    </ul>
+                    <b>{user && user.displayName}</b>
+                    <div className="ul-container">
+                      <ul className="mt-2">
+                        <li>Account</li>
+                        <li>Profile</li>
+                        <li>Setting</li>
+                        <li className="btn" onClick={() => logout()}>
+                          logOut
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 ) : (
                   <li className="ml-3">
