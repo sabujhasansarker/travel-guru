@@ -1,4 +1,4 @@
-import { GETDATA, BLACK, GETUSER, LOGOUT } from "../type";
+import { GETDATA, BLACK, GETUSER, LOGOUT, USERERROR } from "../type";
 
 export default (state, action) => {
   const { payload, type } = action;
@@ -7,7 +7,6 @@ export default (state, action) => {
       return {
         ...state,
         data: payload,
-        loading: false,
       };
     case BLACK:
       return {
@@ -18,6 +17,12 @@ export default (state, action) => {
       return {
         ...state,
         user: payload,
+        loading: false,
+      };
+    case USERERROR:
+      return {
+        ...state,
+        loading: false,
       };
     case LOGOUT:
       return {

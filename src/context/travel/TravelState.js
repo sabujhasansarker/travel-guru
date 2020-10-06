@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 
-import { GETDATA, BLACK, GETUSER, LOGOUT } from "../type";
+import { GETDATA, BLACK, GETUSER, LOGOUT, USERERROR } from "../type";
 import TravelContext from "./TravelContext";
 import TravelReducer from "./TravelReducer";
 
@@ -56,6 +56,10 @@ const TravelState = ({ children }) => {
         dispatch({
           type: GETUSER,
           payload: reg ? reg : user.providerData[0],
+        });
+      } else {
+        dispatch({
+          type: USERERROR,
         });
       }
     });

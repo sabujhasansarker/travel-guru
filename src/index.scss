@@ -326,7 +326,9 @@ header {
     .single-hotel {
       @include flex(unset);
       align-items: flex-start;
-      flex-wrap: wrap;
+      @include custom(1520px) {
+        flex-wrap: wrap;
+      }
       @include custom(760px) {
         display: block;
       }

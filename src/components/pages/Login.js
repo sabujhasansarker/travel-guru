@@ -5,9 +5,15 @@ import { auth } from "../../config/fire";
 import TravelContext from "../../context/travel/TravelContext";
 
 const Login = () => {
-  const { blackLogo, user, getUser, data, googleReg, facebookReg } = useContext(
-    TravelContext
-  );
+  const {
+    blackLogo,
+    user,
+    getUser,
+    data,
+    googleReg,
+    facebookReg,
+    loading,
+  } = useContext(TravelContext);
 
   useEffect(() => {
     blackLogo();
@@ -18,10 +24,12 @@ const Login = () => {
     password: "",
   });
   const [alert, setAlert] = useState("");
-  const { email, password } = inputData;
-  if (user) {
+
+  if (user && !loading) {
     return <Redirect to={window.history.back()} />;
   }
+
+  const { email, password } = inputData;
 
   const onChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });

@@ -1,18 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import TravelContext from "../../context/travel/TravelContext";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const Search = ({ match }) => {
-  const { blackLogo, data, user } = useContext(TravelContext);
+  const { blackLogo, data, user, loading } = useContext(TravelContext);
   useEffect(() => {
     blackLogo();
   }, []);
+  console.log(user, loading);
   const currentData =
     data.mainData &&
     data.mainData.filter(
       (d) => d.name.split(" ").join("-").toLowerCase() == match.params.name
     );
-  if (!user) {
+  if (!user && !loading) {
     return <Redirect to="/login" />;
   }
   return (
