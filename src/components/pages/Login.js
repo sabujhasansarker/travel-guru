@@ -5,26 +5,28 @@ import { auth } from "../../config/fire";
 import TravelContext from "../../context/travel/TravelContext";
 
 const Login = () => {
-  const { blackLogo, user, getUser } = useContext(TravelContext);
+  const { blackLogo, user, getUser, data, googleReg } = useContext(
+    TravelContext
+  );
 
   useEffect(() => {
     blackLogo();
   }, []);
 
-  const [data, setData] = useState({
+  const [inputData, setInputData] = useState({
     email: "",
     password: "",
   });
 
   const [alert, setAlert] = useState("");
-  const { email, password } = data;
+  const { email, password } = inputData;
 
   if (user) {
     return <Redirect to="/" />;
   }
 
   const onChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
@@ -83,6 +85,12 @@ const Login = () => {
         </p>
       </form>
       <div className="or text-center my-2">Or</div>
+      <div className="fb">
+        <img src={data.essentialData && data.essentialData.fb} alt="" />
+      </div>
+      <div className="google" onClick={() => googleReg()}>
+        <img src={data.essentialData && data.essentialData.google} alt="" />
+      </div>
     </section>
   );
 };

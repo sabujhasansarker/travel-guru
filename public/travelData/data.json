@@ -160,6 +160,8 @@
     "search": "../images/search.png",
     "arrow": "../images/arrow.png",
     "longArrow": "../images/longArrow.png",
-    "star": "../images/star.png"
+    "star": "../images/star.png",
+    "fb": "../images/fb.png",
+    "google": "../images/google.png"
   }
 }

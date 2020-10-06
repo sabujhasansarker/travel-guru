@@ -8,9 +8,14 @@ const Navbar = ({ logo, search, black, user, logout }) => {
       className={`pt-2 ${
         document.documentElement.scrollTop > 100 ? "stick-nav" : ""
       }`}
-      style={{ color: black ? "black" : "white" }}
+      style={{
+        color: black ? "black" : "white",
+      }}
     >
-      <div className="container">
+      <div
+        className={`container ${black ? "pb-1" : ""}`}
+        style={{ borderBottom: black ? " 1px solid #d1d1d1" : 0 }}
+      >
         <nav>
           <Link to="/" className="logo">
             <img src={logo} alt="" />

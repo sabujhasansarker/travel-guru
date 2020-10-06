@@ -4,7 +4,7 @@ import { GETDATA, BLACK, GETUSER, LOGOUT } from "../type";
 import TravelContext from "./TravelContext";
 import TravelReducer from "./TravelReducer";
 
-import { auth } from "../../config/fire";
+import { auth, google } from "../../config/fire";
 
 const TravelState = ({ children }) => {
   const initialState = {
@@ -69,6 +69,14 @@ const TravelState = ({ children }) => {
     });
   };
 
+  const googleReg = () => {
+    try {
+      auth.signInWithPopup(google);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
   const { data, loading, black, user } = state;
   return (
     <TravelContext.Provider
@@ -81,6 +89,7 @@ const TravelState = ({ children }) => {
         whiteLogo,
         getUser,
         logout,
+        googleReg,
       }}
     >
       {children}

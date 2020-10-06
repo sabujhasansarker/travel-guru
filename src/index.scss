@@ -303,7 +303,7 @@ header {
     }
   }
   .container {
-    border-top: 1px solid #d1d1d1;
+    // border-top: 1px solid #d1d1d1;
     @include flex(space-between);
     align-items: flex-start;
     padding-top: 3rem;
