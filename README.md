@@ -2,7 +2,7 @@
 
 
 # Travel Guru [<img  src="https://img.shields.io/badge/%20Travel%20Guru -Live%20here-brightgreen"/>](https://travel-guru-c87a1.web.app/)
----
+
 # Quick Start ![rocket](https://github.githubassets.com/images/icons/emoji/unicode/1f680.png)
 
 ### Add a fire.js file in config folder under src folder with the following
