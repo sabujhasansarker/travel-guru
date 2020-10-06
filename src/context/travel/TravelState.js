@@ -1,14 +1,17 @@
 import React, { useReducer, useEffect } from "react";
 
-import { GETDATA, BLACK } from "../type";
+import { GETDATA, BLACK, GETUSER, LOGOUT } from "../type";
 import TravelContext from "./TravelContext";
 import TravelReducer from "./TravelReducer";
+
+import { auth } from "../../config/fire";
 
 const TravelState = ({ children }) => {
   const initialState = {
     data: [],
     loading: true,
     black: false,
+    user: null,
   };
 
   const [state, dispatch] = useReducer(TravelReducer, initialState);
@@ -29,6 +32,7 @@ const TravelState = ({ children }) => {
           payload: res,
         });
       });
+    getUser();
   }, []);
 
   // set black logo
@@ -46,10 +50,38 @@ const TravelState = ({ children }) => {
     });
   };
 
-  const { data, loading, black } = state;
+  const getUser = () => {
+    auth.onAuthStateChanged(function (user) {
+      if (user) {
+        dispatch({
+          type: GETUSER,
+          payload: user.providerData[0],
+        });
+      }
+    });
+  };
+
+  const logout = () => {
+    auth.signOut().then(() => {
+      dispatch({
+        type: LOGOUT,
+      });
+    });
+  };
+
+  const { data, loading, black, user } = state;
   return (
     <TravelContext.Provider
-      value={{ data, loading, black, blackLogo, whiteLogo }}
+      value={{
+        data,
+        loading,
+        black,
+        user,
+        blackLogo,
+        whiteLogo,
+        getUser,
+        logout,
+      }}
     >
       {children}
     </TravelContext.Provider>

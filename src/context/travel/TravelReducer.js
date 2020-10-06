@@ -1,4 +1,4 @@
-import { GETDATA, BLACK } from "../type";
+import { GETDATA, BLACK, GETUSER, LOGOUT } from "../type";
 
 export default (state, action) => {
   const { payload, type } = action;
@@ -13,6 +13,16 @@ export default (state, action) => {
       return {
         ...state,
         black: payload,
+      };
+    case GETUSER:
+      return {
+        ...state,
+        user: payload,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        user: null,
       };
     default:
       return state;

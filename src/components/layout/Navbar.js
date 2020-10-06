@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ logo, search, black }) => {
+const Navbar = ({ logo, search, black, user, logout }) => {
   const [toggle, setToggle] = useState(false);
+  console.log(user);
   return (
     <header
       className={`pt-2 ${
@@ -54,11 +55,27 @@ const Navbar = ({ logo, search, black }) => {
                 <li className="ml-3">
                   <Link to="/contact">contact</Link>
                 </li>
-                <li className="ml-3">
-                  <Link className="btn" to="/login">
-                    login
-                  </Link>
-                </li>
+                {user ? (
+                  <li className="ml-3 name">
+                    <p>
+                      <b>{user && user.displayName}</b>
+                    </p>
+                    <ul className="mt-2">
+                      <li>Account</li>
+                      <li>Profile</li>
+                      <li>Setting</li>
+                      <li className="btn" onClick={() => logout()}>
+                        logOut
+                      </li>
+                    </ul>
+                  </li>
+                ) : (
+                  <li className="ml-3">
+                    <Link className="btn" to="/login">
+                      login
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

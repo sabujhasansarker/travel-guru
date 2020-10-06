@@ -9,7 +9,7 @@ import Registration from "./components/pages/Registration";
 import Search from "./components/pages/Search";
 
 const App = () => {
-  const { data, black } = useContext(TravelContext);
+  const { data, black, user, logout } = useContext(TravelContext);
   return (
     <Router>
       <Navbar
@@ -20,6 +20,8 @@ const App = () => {
         }
         search={data.essentialData && data.essentialData.search}
         black={black}
+        user={user}
+        logout={logout}
       />
       <Switch>
         <Route exact path="/" component={Home} />
